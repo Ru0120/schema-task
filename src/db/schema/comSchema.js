@@ -1,22 +1,21 @@
 import mongoose from "mongoose";
 
-//const { Schema } = mongoose;
-export const userSchema = new mongoose.Schema(
+export const comSchema = new mongoose.Schema(
   {
     username: {
       type: String,
       require: true,
       unique: true,
     },
-    profilePic: {
+    text: {
       type: String,
       require: false,
     },
-    followers: {
-      type: [String],
+    postid: {
+      type: mongoose.Schema.Types.ObjectId,
       requrie: false,
     },
   },
 
-  { timestamps: true, collection: "user" }
+  { timestamps: true, collection: "com" }
 );
